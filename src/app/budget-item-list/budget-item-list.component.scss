@@ -1,34 +1,58 @@
 @import '../../main-style.scss';
 
-.budget-items-section{
+.budget-items-section {
     display: flex;
     padding: 50px;
 
+    // Horizontally and vertically center flex children
     justify-content: center;
     align-items: center;
-
-    .budget-items-container
-    {
+    
+    .budget-items-container {
         display: flex;
-        max-width: 720px;
+        max-width: 680px;
         height: 100%;
         width: 100%;
-       
 
-        .expense-column,.income-column
-        {
+        .income-column, .expense-column {
             display: flex;
             flex-direction: column;
-            flex-basis: 0;//for column to be on the same side
+            flex-basis: 0; // for the columns to be the same size, regardless of content
             flex-grow: 1;
 
-            h1{
+            h1 {
                 font-family: 'Lato';
                 font-size: 24px;
                 font-weight: 900;
-                text-transform:uppercase;
+                text-transform: uppercase;
+            }
+
+            .budget-items {
+                display: flex;
+                flex-direction: column;
+
+                margin-top: 20px;
             }
         }
-            
+
+        .budget-items{
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+        .income-column {
+            margin-right: 35px;
+
+           h1 {
+                color: $green;
+            }
+        }
+
+        .expense-column {
+
+            h1 {
+                color:$red ;
+            }
         }
     }
+}
