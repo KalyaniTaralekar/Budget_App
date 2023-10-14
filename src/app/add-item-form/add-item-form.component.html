@@ -1,4 +1,4 @@
-<form>
+<form #itemForm="ngForm" (ngSubmit)="onSubmit(itemForm)">
     <div class="field is-horizontal">
         <div class="field-body">
                 <div class="field is-narrow">
@@ -12,9 +12,11 @@
                     </p>
                 </div>
                 <div class="field is-narrow">
-                  <button class="button" disabled="true" style="background-color: rgb(159,104,235)">Add</button>
+                    <!-- disabled true -->
+                  <button class="button"  style="background-color: rgb(185, 152, 230)">Add</button>
                 </div>
                 <hr>
+                //template driven forms
         </div>
     </div>
 </form>
