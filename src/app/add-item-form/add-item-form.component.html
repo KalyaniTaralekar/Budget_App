@@ -3,20 +3,24 @@
         <div class="field-body">
                 <div class="field is-narrow">
                     <p class="control">
-                        <input class="input" type="number" placeholder="Amount" style="width: 100px;">
+                        <input required name="amount" [ngModel]="item.amount" class="input" type="number" placeholder="Amount" style="width: 100px;">
                     </p>
                 </div>
                 <div class="field">
                     <p class="control">
-                        <input class="input" type="text" placeholder="Description">
+                        <input required name="description" [ngModel]="item.description"  class="input" type="text" placeholder="Description">
                     </p>
                 </div>
                 <div class="field is-narrow">
                     <!-- disabled true -->
-                  <button class="button"  style="background-color: rgb(185, 152, 230)">Add</button>
+                  <button class="button" [disabled]="!itemForm.valid" type="submit" style="background-color: rgb(185, 152, 230)" [ngClass]="{'is-primary':isNewItem,'is-success':!isNewItem}">
+                    <!-- <p *ngIf="!isNewItem">Add</p> -->
+                    <!-- <p *ngIf="isNewItem">Save</p> -->
+                    Add
+                </button>
                 </div>
                 <hr>
-                //template driven forms
+                <!--template driven forms -->
         </div>
     </div>
 </form>
